@@ -4,13 +4,14 @@ import ConfirmationButton from "../ConfirmationButton";
 import styles from "./styles.module.css";
 
 const initialState = {
-  fullname: "",
+  namaLengkap: "",
   email: "",
-  phone: "",
-  nationalID: "",
-  message: "",
-  criticalError: "",
+  telepon: "",
+  noIdentitas: "",
+  pesan: "",
+  kesalahanKritis: "",
 };
+
 
 function ReservationForm({ capacity, setGuests, guests, handleSubmit, children }) {
   return (
@@ -18,7 +19,7 @@ function ReservationForm({ capacity, setGuests, guests, handleSubmit, children }
       <div>
         <div className={styles.formControl}>
           <label htmlFor="" className={styles.formLabel}>
-            Guests Number:
+          Nomor Tamu:
           </label>
           <select
             defaultValue={guests}
@@ -27,7 +28,7 @@ function ReservationForm({ capacity, setGuests, guests, handleSubmit, children }
             className={styles.formInput}
             onChange={(e) => (e.target.value ? setGuests(e.target.value) : null)}
           >
-            <option value="">Select guests number</option>
+            <option value="">Pilih nomor tamu</option>
             {Array.from(Array(capacity ?? 0)).map((item, index) => (
               <option key={index} value={index + 1}>
                 {index + 1}
