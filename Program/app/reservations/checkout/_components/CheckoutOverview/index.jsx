@@ -16,48 +16,48 @@ function CheckoutOverview({ room, pending_reservation }) {
     <div>
       <Card>
         <Card.Thumbnail>
-          <Image fill src={`${SUPABASE_ROOMS_URL}/${room.thumbnail}`} alt={`${room.name} thumbnail`} />
+          <Image fill src={`${SUPABASE_ROOMS_URL}/${room.thumbnail}`} alt={`Gambar thumbnail untuk ${room.name}`} />
         </Card.Thumbnail>
 
         <Card.Description className={styles.overviewDescription}>
           <h2>{room.name}</h2>
           <div className={styles.bookingSummary}>
-            <h3>Booking Summary</h3>
+            <h3>Ringkasan Pemesanan</h3>
             <p>
-              <span>Arrival</span>
+              <span>Kedatangan</span>
               <span>{formatToAbrFormat(pending_reservation.start_date)}</span>
             </p>
             <p>
-              <span>Departure</span>
+              <span>Keberangkatan</span>
               <span>{formatToAbrFormat(pending_reservation.end_date)}</span>
             </p>
             <p>
-              <span>Guests</span>
+              <span>Tamu</span>
               <span>{String(pending_reservation.guests_count).padStart(2, "0")}</span>
             </p>
           </div>
 
           <div className={styles.bookingSummary}>
-            <h3>Pricing Breakdown</h3>
+            <h3>Rincian Harga</h3>
             <p>
-              <span>${room.price} x night (Base Rate for 1 Guest)</span>
-              <span>${room.price.toFixed(2)}</span>
+              <span>Rp{room.price} per malam (Tarif Dasar untuk 1 Tamu)</span>
+              <span>Rp{room.price.toFixed(2)}</span>
             </p>
             <p>
               <span>
-                Additional Guests ({pending_reservation.guests_count - 1} x ${room.price / 2}per night)
+                Tamu Tambahan ({pending_reservation.guests_count - 1} x Rp{room.price / 2} per malam)
               </span>
-              <span>${guestsPrice}</span>
+              <span>Rp{guestsPrice}</span>
             </p>
             <p>
-              <span>Total per Night: </span>
-              <span>${totalPerNight}</span>
+              <span>Total per Malam: </span>
+              <span>Rp{totalPerNight}</span>
             </p>
           </div>
 
           <div className={styles.totalPrice}>
-            <span>Total Without Taxes ({totalNights} Nights)</span>
-            <span>${totalPrice}</span>
+            <span>Total Tanpa Pajak ({totalNights} Malam)</span>
+            <span>Rp{totalPrice}</span>
           </div>
         </Card.Description>
       </Card>
