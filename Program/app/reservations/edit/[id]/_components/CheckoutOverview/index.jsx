@@ -12,7 +12,7 @@ function CheckoutOverview({ reservation, guests, start, end }) {
   const totalPerNight = nightTotalPrice(reservation.rooms.price, guests);
   const guestsPrice = ((guests - 1) * (reservation.rooms.price / 2)).toFixed(2);
   const totalPrice = bookingTotalPrice(reservation.rooms.price, guests, totalNights);
-  // return <h1>OVERVIEW CARD</h1>;
+
   return (
     <div>
       <Card>
@@ -20,49 +20,49 @@ function CheckoutOverview({ reservation, guests, start, end }) {
           <Image
             fill
             src={`${SUPABASE_ROOMS_URL}/${reservation.rooms.thumbnail}`}
-            alt={`${reservation.rooms.name} thumbnail`}
+            alt={`Gambar thumbnail untuk ${reservation.rooms.name}`}
           />
         </Card.Thumbnail>
 
         <Card.Description className={styles.overviewDescription}>
           <h2>{reservation.rooms.name}</h2>
           <div className={styles.bookingSummary}>
-            <h3>Booking Summary</h3>
+            <h3>Ringkasan Pemesanan</h3>
             <p>
-              <span>Arrival</span>
+              <span>Kedatangan</span>
               <span>{formatToAbrFormat(new Date(start))}</span>
             </p>
             <p>
-              <span>Departure</span>
+              <span>Keberangkatan</span>
               <span>{formatToAbrFormat(new Date(end))}</span>
             </p>
             <p>
-              <span>Guests</span>
+              <span>Jumlah Tamu</span>
               <span>{String(guests).padStart(2, "0")}</span>
             </p>
           </div>
 
           <div className={styles.bookingSummary}>
-            <h3>Pricing Breakdown</h3>
+            <h3>Rincian Harga</h3>
             <p>
-              <span>${reservation.rooms.price.toFixed(2)} x night (Base Rate for 1 Guest)</span>
-              <span>${reservation.rooms.price.toFixed(2)}</span>
+              <span>Rp{reservation.rooms.price.toFixed(2)} per malam (Tarif Dasar untuk 1 Tamu)</span>
+              <span>Rp{reservation.rooms.price.toFixed(2)}</span>
             </p>
             <p>
               <span>
-                Additional Guests ({guests - 1} x ${Number(reservation.rooms.price / 2).toFixed(2)}per night)
+                Tamu Tambahan ({guests - 1} x Rp{Number(reservation.rooms.price / 2).toFixed(2)} per malam)
               </span>
-              <span>${guestsPrice}</span>
+              <span>Rp{guestsPrice}</span>
             </p>
             <p>
-              <span>Total per Night: </span>
-              <span>${totalPerNight}</span>
+              <span>Total per Malam: </span>
+              <span>Rp{totalPerNight}</span>
             </p>
           </div>
 
           <div className={styles.totalPrice}>
-            <span>Total Without Taxes ({totalNights} Nights)</span>
-            <span>${totalPrice}</span>
+            <span>Total Tanpa Pajak ({totalNights} Malam)</span>
+            <span>Rp{totalPrice}</span>
           </div>
         </Card.Description>
       </Card>
