@@ -2,14 +2,14 @@ import Banner from "../_components/Banner";
 import Contact from "../_components/Contact";
 
 export const metadata = {
-  title: "Contact Us",
-  description: "Reach out to the Hotel Booking App ",
+  title: "Hubungi Kami",
+  description: "Hubungi Aplikasi Reservasi Hotel ",
 };
 
 async function Page() {
   return (
     <>
-      <Banner title={"REACHING OUT"} />
+      <Banner title={"HUBUNGI KAMI"} />
       <Contact />
     </>
   );
