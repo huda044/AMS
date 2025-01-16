@@ -5,7 +5,7 @@ function ConfirmationButton({ disabled }) {
   const { pending } = useFormStatus();
   return (
     <button className={styles.formButton} disabled={pending || disabled}>
-      {pending ? "Processing..." : "Confirm"}
+      {pending ? "Memproses..." : "Konfirmasi"}
     </button>
   );
 }
