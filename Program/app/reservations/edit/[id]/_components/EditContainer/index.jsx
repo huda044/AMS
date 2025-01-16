@@ -21,8 +21,8 @@ function EditContainer({ reservation, reservationUpdateAction }) {
     console.log(range);
     if (!range) return;
 
-    const from = formatISO(range?.from, { representation: "date" });
-    const to = formatISO(range?.to, { representation: "date" });
+    const from = formatISO(range?.from, { representation: "tanggal" });
+    const to = formatISO(range?.to, { representation: "tanggal" });
 
     console.log(from, to);
     setStartDate(from);
@@ -31,15 +31,15 @@ function EditContainer({ reservation, reservationUpdateAction }) {
 
   async function handleSubmit() {
     const reservationFormData = new FormData();
-    reservationFormData.set("start_date", startDate);
-    reservationFormData.set("end_date", endDate);
-    reservationFormData.set("guests", guests);
+    reservationFormData.set("tanggal_mulai", startDate);
+    reservationFormData.set("tanggal_akhir", endDate);
+    reservationFormData.set("tamu", guests);
     reservationFormData.set("reservation_id", reservation.id);
 
     await formAction(reservationFormData);
   }
 
-  if (state.status === "success") toast.success("Your reservation has been updated!");
+  if (state.status === "sukses") toast.success("Reservasi Anda telah diperbarui!");
   else if (state.error) toast.error(state.error);
 
   return (
