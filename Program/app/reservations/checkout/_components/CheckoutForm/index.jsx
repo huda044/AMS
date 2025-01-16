@@ -10,11 +10,11 @@ import { useTransition } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const initialState = {
-  fullname: "",
+  namalengkap: "",
   email: "",
   phone: "",
-  nationalID: "",
-  message: "",
+  nasionalID: "",
+  pesan: "",
   criticalError: "",
 };
 
@@ -29,35 +29,35 @@ function CheckoutForm({ guest, createReservationAction, bookingCancelAction, chi
 
   const errors = Object.values(state)?.filter((item) => item.length);
   console.log(errors);
-  if (errors.length) errors.forEach((item) => toast.error(item ?? "Failed to confirm you booking, please try again"));
+  if (errors.length) errors.forEach((item) => toast.error(item ?? "Gagal mengonfirmasi pemesanan Anda, silakan coba lagi"));
 
   return (
     <form action={formAction} className={styles.form}>
-      <h2 className={styles.formHeading}>Reservation Confirmation</h2>
+      <h2 className={styles.formHeading}>Konfirmasi Reservasi</h2>
 
       {state?.criticalError && <Alert>{state?.criticalError}</Alert>}
 
       <div className={styles.formControlRow}>
         <div className={styles.formControl}>
           <label htmlFor="" className={styles.formLabel}>
-            Fullname
+            Namalengkap
           </label>
-          <input type="text" name="fullname" defaultValue={guest.fullname} className={styles.formInput} />
+          <input type="teks" name="namalengkap" defaultValue={guest.fullname} className={styles.formInput} />
           {state?.fullname && <span className={styles.errorMessage}>{state?.fullname}</span>}
         </div>
 
         <div className={styles.formControl}>
           <label htmlFor="" className={styles.formLabel}>
-            NationalID
+            NasionalID
           </label>
-          <input type="text" name="nationalID" defaultValue={guest.nationalID} className={styles.formInput} />
+          <input type="teks" name="nasionalID" defaultValue={guest.nationalID} className={styles.formInput} />
           {state?.nationalID && <span className={styles.errorMessage}>{state?.nationalID}</span>}
         </div>
       </div>
 
       <div className={styles.formControl}>
         <label htmlFor="" className={styles.formLabel}>
-          Email Address
+          Alamat Email
         </label>
         <input type="email" name="email" defaultValue={guest.email} className={styles.formInput} />
         {state?.email && <span className={styles.errorMessage}>{state?.email}</span>}
@@ -65,7 +65,7 @@ function CheckoutForm({ guest, createReservationAction, bookingCancelAction, chi
 
       <div className={styles.formControl}>
         <label htmlFor="" className={styles.formLabel}>
-          Phone Number
+          Nomor Handphone
         </label>
         <input type="tel" name="phone" defaultValue={guest.phone} className={styles.formInput} />
         {state?.phone && <span className={styles.errorMessage}>{state?.phone}</span>}
@@ -73,9 +73,9 @@ function CheckoutForm({ guest, createReservationAction, bookingCancelAction, chi
 
       <div className={styles.formControl}>
         <label htmlFor="" className={styles.formLabel}>
-          <span>Where are you from?</span>{" "}
+          <span>Dari mana Anda berasal?</span>{" "}
           <span className={styles.countryFlag}>
-            <img src={guest.countryFlag} alt={`${guest.nationality ?? "country"} flag`} />
+            <img src={guest.countryFlag} alt={`${guest.nationality ?? "kota"} flag`} />
           </span>
         </label>
         {children}
@@ -84,9 +84,9 @@ function CheckoutForm({ guest, createReservationAction, bookingCancelAction, chi
 
       <div className={styles.formControl}>
         <label htmlFor="" className={styles.formLabel}>
-          More Informations
+        Informasi Lebih Lanjut
         </label>
-        <textarea name="message" id="" className={styles.formTextArea} rows={5}></textarea>
+        <textarea name="pesan" id="" className={styles.formTextArea} rows={5}></textarea>
         {state?.message && <span className={styles.errorMessage}>{state?.message}</span>}
       </div>
 
