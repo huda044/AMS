@@ -5,8 +5,8 @@ import { getReservationByID } from "@/app/_lib/supabase/reservations";
 import { auth } from "@/auth";
 
 export const metadata = {
-  title: "Edit Reservation",
-  description: "Edit your already booked reservation ",
+  title: "Edit Reservasi",
+  description: "Edit reservasi Anda yang sudah dipesan ",
 };
 
 async function Page({ params }) {
@@ -15,21 +15,21 @@ async function Page({ params }) {
   const reservation = await getReservationByID(reservation_id);
   if (!reservation) notFound();
 
-  const isUpdateAllowed = reservation.status === "confirmed" || reservation.status === "unconfirmed";
+  const isUpdateAllowed = reservation.status === "terkonfirmasi" || reservation.status === "belum dikonfirmasi";
 
-  if (!isUpdateAllowed) return <h4>Sorry, but reservation cannot be edited.</h4>;
+  if (!isUpdateAllowed) return <h4>Maaf, reservasi tidak dapat diedit.</h4>;
 
   const session = await auth();
 
   if (session?.user.id !== reservation.guest_id)
     return (
-      <div className="container">
-        <h2>Unauthorized action!</h2>
+      <div className="penampung">
+        <h2>Tindakan tanpa izin!</h2>
       </div>
     );
   return (
     <>
-      <Banner title={"EDIT RESERVATION"} />
+      <Banner title={"EDIT RESERVASI"} />
       <EditSection reservation={reservation} />
     </>
   );
