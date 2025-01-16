@@ -32,21 +32,21 @@ async function CheckoutSection() {
     console.log("state");
     console.log(prevState);
     prevState = { ...prevState, isConfirming: true };
-    const fullname = formData.get("fullname");
-    const nationalID = formData.get("nationalID");
+    const fullname = formData.get("namalengkap");
+    const nationalID = formData.get("nasionalID");
     const email = formData.get("email");
     const phone = formData.get("phone");
-    const nationalityWithFlag = formData.get("nationality");
-    const message = formData.get("message");
+    const nationalityWithFlag = formData.get("kewarganegaraan");
+    const message = formData.get("pesan");
 
     try {
-      reservationSchema.parse({ fullname, email, phone, nationality: nationalityWithFlag, nationalID, message });
+      reservationSchema.parse({ namalengkap, email, telepon, kewarganegaraan:kewarganegaraanDenganBendera, nasionalID, pesan });
     } catch (err) {
       // console.log("errors");
       // console.log(err.errors);
       prevState = {};
       err?.errors.forEach((element) => {
-        prevState[element?.path[0] ?? "unknown"] = element.message;
+        prevState[element?.path[0] ?? "tidak diketahui"] = element.message;
       });
 
       return { ...prevState };
@@ -73,9 +73,9 @@ async function CheckoutSection() {
       // cookies().set("reservation_confirmed", "true");
       cookies().delete("pending_reservation");
     } catch (err) {
-      console.log("CHECKOUT COOKIE ERROR");
+      console.log("KESALAHAN COOKIE CHECKOUT");
       console.log(err);
-      return { ...prevState, criticalErr: "Failed to confirm your booking!" };
+      return { ...prevState, criticalErr: "Gagal mengkonfirmasi pemesanan Anda!" };
     } finally {
       revalidatePath("/account/history");
       redirect("/account/history");
