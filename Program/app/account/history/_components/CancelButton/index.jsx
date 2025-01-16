@@ -8,7 +8,7 @@ function CancelButton() {
   const { pending } = useFormStatus();
   return (
     <button type="submit" disabled={pending} className={styles.deleteButton}>
-      {pending ? <span>Proceccing...</span> : <span>Confirm</span>}
+      {pending ? <span>Memproses...</span> : <span>Konfirmasi</span>}
     </button>
   );
 }

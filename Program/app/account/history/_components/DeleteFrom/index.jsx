@@ -17,8 +17,8 @@ function DeleteForm({ deleteAction, showLabel = false }) {
 
   if (state?.error) {
     toast.error(state.error);
-  } else if (state?.status === "success") {
-    toast.success("Your reservation has been deleted");
+  } else if (state?.status === "sukses") {
+    toast.success("Reservasi Anda telah dihapus");
   }
 
   return (
@@ -32,7 +32,7 @@ function DeleteForm({ deleteAction, showLabel = false }) {
 function DeleteButton({ showLabel }) {
   const { pending } = useFormStatus();
   return (
-    <button type="submit" disabled={pending} className={styles.deleteButton}>
+    <button type="kirim" disabled={pending} className={styles.deleteButton}>
       <span>
         <FontAwesomeIcon icon={faTrash} />
       </span>

@@ -48,13 +48,13 @@ function ReservationUpdate({ reservation }) {
     );
 
     if (isIntersecting) {
-      setRangeError("Invalid! The selected range has already a booked plan(s)");
+      setRangeError("Tidak valid! Rentang yang dipilih sudah memiliki paket yang dipesan.");
     }
 
     const isReversedRange = isAfter(selectedDateRange.start, selectedDateRange.end);
 
     if (isReversedRange) {
-      setRangeError("Invalid! Please select a valid date range");
+      setRangeError("Tidak valid! Pilih rentang tanggal yang valid");
     }
   }
 

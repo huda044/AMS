@@ -21,19 +21,19 @@ function ReservationCard({ reservation }) {
     const session = await auth();
     const active_user = session?.user;
 
-    if (!active_user) return { ...prevState, error: "unauthorized action, please authenticate and try again" };
+    if (!active_user) return { ...prevState, error: "tindakan yang tidak sah, harap autentikasi dan coba lagi" };
 
     const targeted_reservation = await getReservationByID(reservation.id);
 
-    if (targeted_reservation.status === "confirmed")
-      return { ...prevState, error: "Cannot delete active reservations! You may want to cancel it instead" };
+    if (targeted_reservation.status === "konfirmasi")
+      return { ...prevState, error: "Tidak dapat menghapus reservasi yang masih aktif! Anda mungkin ingin membatalkannya sebagai gantinya" };
 
-    if (targeted_reservation.guest_id !== active_user.id) return { ...prevState, error: "unauthorized action!" };
+    if (targeted_reservation.guest_id !== active_user.id) return { ...prevState, error: "tindakan yang tidak sah!" };
 
     await deleteReservation(session.supabaseAccessToken, reservation.id);
     revalidatePath("/account/history");
 
-    return { ...prevState, status: "success" };
+    return { ...prevState, status: "sukses" };
   }
 
   const arrivalDate = formatToAbrFormat(reservation.start_date);
@@ -51,11 +51,11 @@ function ReservationCard({ reservation }) {
             <span>{reservation.rooms.name}</span>
 
             {isPast(reservation.start_date) && isFuture(reservation.end_date) ? (
-              <span className={`${styles.onGoing} ${styles.reservationEstimation}`}>ON GOING</span>
+              <span className={`${styles.onGoing} ${styles.reservationEstimation}`}>SEDANG BERLANGSUNG</span>
             ) : isFuture(reservation.start_date) ? (
-              <span className={`${styles.future} ${styles.reservationEstimation}`}>FUTURE</span>
+              <span className={`${styles.future} ${styles.reservationEstimation}`}>MENDATANG</span>
             ) : isPast(reservation.end_date) ? (
-              <span className={`${styles.past} ${styles.reservationEstimation}`}>PAST</span>
+              <span className={`${styles.past} ${styles.reservationEstimation}`}>LALU</span>
             ) : (
               ""
             )}
@@ -72,11 +72,11 @@ function ReservationCard({ reservation }) {
           {/* CREATE A SEPARATED COMPONENT FOR THE STATUS AS BADGE */}
           <Badge
             type={
-              reservation.status == "unconfirmed"
-                ? "warning"
-                : reservation.status == "canceled" || reservation.status == "finished"
-                ? "danger"
-                : "success"
+              reservation.status == "belum dikonfirmasi"
+                ? "peringatan"
+                : reservation.status == "dibatalkan" || reservation.status == "selesai"
+                ? "bahaya"
+                : "sukses"
             }
           >
             {reservation.status}

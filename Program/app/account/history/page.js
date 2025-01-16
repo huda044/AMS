@@ -6,8 +6,8 @@ import { auth } from "@/auth";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Booking History",
-  description: "Reservations history at the Hotel Booking App ",
+  title: "Riwayat Pemesanan",
+  description: "Riwayat pemesanan di Aplikasi Pemesanan Hotel",
 };
 
 async function History() {
@@ -23,14 +23,14 @@ async function History() {
 
   return (
     <>
-      <Heading textClassName={styles.heading}>Your History</Heading>
+      <Heading textClassName={styles.heading}>Riwayat Anda</Heading>
       <div>
         {reservations.length ? (
           reservations.reverse().map((item) => <ReservationCard key={item.id} reservation={item} />)
         ) : (
           <div>
-            <p>You have no booked room.</p>
-            <Link href={"/rooms"}>View Rooms</Link>
+            <p>Anda belum memiliki pemesanan kamar.</p>
+            <Link href={"/rooms"}>Lihat Kamar</Link>
           </div>
         )}
       </div>
