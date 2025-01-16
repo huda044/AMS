@@ -4,8 +4,8 @@ import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Reservation Checkout",
-  description: "Checkout your reservation and let yourself have a good stay with us",
+  title: "Pembayaran Reservasi",
+  description: "Lakukan reservasi dan nikmati masa menginap Anda bersama kami",
 };
 
 async function Page() {
