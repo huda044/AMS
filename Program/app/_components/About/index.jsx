@@ -9,11 +9,11 @@ function About() {
         <div className={styles.description}>
           <Heading>About Us</Heading>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis perferendis itaque iure consequatur iusto
-            omnis sapiente, doloribus animi velit vero impedit repellendus minus eaque quos voluptatum eum obcaecati
-            ducimus sequi! Blanditiis impedit praesentium labore amet. Numquam molestias, praesentium iste minus quis
-            cupiditate ea voluptatem natus, impedit perferendis distinctio ullam atque enim error, quasi sit? Iure
-            quibusdam aperiam nostrum enim. Sequi.
+          Perusahaan itu sendiri adalah perusahaan yang sangat sukses. Oleh karena itu, pembawaan kebenaran akan menghasilkan suatu kebenaran yang adil
+            setiap orang bijak menghendaki kesedihan jiwanya, namun ia mencegahnya agar tidak terlalu ditolak, dan mereka yang dibutakan oleh kesenangan
+            kami memimpin untuk mengikuti! Sanjungannya menghambat pekerjaan masa kini. Dia tidak pernah mendapat masalah, dia hadir lebih sedikit dari siapa pun
+            Karena terlahir dengan hasrat akan kesenangan itu, adakah perbedaan yang menghalanginya untuk mewujudkannya, dan bahkan kesalahan, seolah-olah? Benar
+            Saya akan membuka milik kita untuk beberapa orang. saya mengikuti.
           </p>
         </div>
         <div className={styles.gallery}>
