@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Reservation Checkout",
-  description: "Checkout your reservation and let yourself have a good stay with us",
+  description: "Periksa reservasi Anda dan nikmati pengalaman menginap yang menyenangkan bersama kami",
 };
 
 async function Page() {
