@@ -19,9 +19,9 @@ function Blog() {
               <h2 className={styles.blogHeading}>Bed Room</h2>
               <p className={styles.blogLabel}>The standard chunck</p>
               <p className={styles.blogDescription}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae veniam fugiat vero nesciunt iste laborum
-                pariatur voluptatum sed. Cumque nulla officiis repellendus dolorum fugit et dolores doloribus. Earum,
-                est quo!
+              Sangat penting bagi pelanggan untuk memperhatikan proses adipiscing. Biarlah pengampunan hidup lari, tetapi mereka tidak mengetahui jerih payah orang ini
+                tapi terhindar dari kesenangan. Dan ketika tidak ada kewajiban untuk menolak rasa sakit dan rasa sakit dengan rasa sakit. dari mereka
+                itu dimana!
               </p>
             </Card.Description>
           </Card>
@@ -33,9 +33,9 @@ function Blog() {
               <h2 className={styles.blogHeading}>Bed Room</h2>
               <p className={styles.blogLabel}>The standard chunck</p>
               <p className={styles.blogDescription}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae veniam fugiat vero nesciunt iste laborum
-                pariatur voluptatum sed. Cumque nulla officiis repellendus dolorum fugit et dolores doloribus. Earum,
-                est quo!
+              Sangat penting bagi pelanggan untuk memperhatikan proses adipiscing. Biarlah pengampunan hidup lari, tetapi mereka tidak mengetahui jerih payah orang ini
+                tapi terhindar dari kesenangan. Dan ketika tidak ada kewajiban untuk menolak rasa sakit dan rasa sakit dengan rasa sakit. dari mereka
+                itu dimana!
               </p>
             </Card.Description>
           </Card>
@@ -48,9 +48,9 @@ function Blog() {
               <h2 className={styles.blogHeading}>Bed Room</h2>
               <p className={styles.blogLabel}>The standard chunck</p>
               <p className={styles.blogDescription}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae veniam fugiat vero nesciunt iste laborum
-                pariatur voluptatum sed. Cumque nulla officiis repellendus dolorum fugit et dolores doloribus. Earum,
-                est quo!
+              Sangat penting bagi pelanggan untuk memperhatikan proses adipiscing. Biarlah pengampunan hidup lari, tetapi mereka tidak mengetahui jerih payah orang ini
+                tapi terhindar dari kesenangan. Dan ketika tidak ada kewajiban untuk menolak rasa sakit dan rasa sakit dengan rasa sakit. dari mereka
+                itu dimana!
               </p>
             </Card.Description>
           </Card>
