@@ -4,7 +4,8 @@ import LoadingSpinner from "@/app/_ui/LoadingSpinner";
 
 export const metadata = {
   title: "Room Details",
-  description: "Discover and book a room at the Hotel Booking App ",
+  description: "Temukan dan pesan kamar di Aplikasi Pemesanan Hotel
+ ",
 };
 
 function RoomDetails({ params }) {
