@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 
 export const metadata = {
   title: "Sign Up",
-  description: "Sign Up to the Hotel Booking App ",
+  description: "Mendaftar ke Aplikasi Pemesanan Hotel ",
 };
 
 async function Page() {
