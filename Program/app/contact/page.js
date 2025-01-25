@@ -3,7 +3,7 @@ import Contact from "../_components/Contact";
 
 export const metadata = {
   title: "Contact Us",
-  description: "Reach out to the Hotel Booking App ",
+  description: "Hubungi Aplikasi Pemesanan Hotel",
 };
 
 async function Page() {
