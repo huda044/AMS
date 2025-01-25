@@ -8,7 +8,8 @@ import Loader from "../_ui/Loader";
 
 export const metadata = {
   title: "Rooms",
-  description: "Discover and book a room at the Hotel Booking App ",
+  description: "Temukan dan pesan kamar di Aplikasi Pemesanan Hotel
+",
 };
 
 function Rooms({ searchParams }) {
