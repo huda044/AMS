@@ -6,7 +6,7 @@ import { auth } from "@/auth";
 
 export const metadata = {
   title: "Edit Reservation",
-  description: "Edit your already booked reservation ",
+  description: "Edit reservasi Anda yang sudah dipesan ",
 };
 
 async function Page({ params }) {
